@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Domain.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
