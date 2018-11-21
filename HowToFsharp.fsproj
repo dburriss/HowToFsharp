@@ -5,10 +5,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Database.fs" />
+    <Compile Include="Data.fs" />
     <Compile Include="Domain.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.109.2" />
   </ItemGroup>
 </Project>
