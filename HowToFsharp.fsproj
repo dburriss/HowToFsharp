@@ -4,9 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Database.fs" />
-    <Compile Include="Data.fs" />
+    <Compile Include="Database.fs" />    
     <Compile Include="Domain.fs" />
+    <Compile Include="Data.fs" />
     <Compile Include="Input.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
