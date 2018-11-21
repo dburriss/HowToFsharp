@@ -44,7 +44,7 @@ module Input =
         match i with
         | "1" -> 
             printfn "Contacts"
-            getContacts() |> List.iter (printfn "%A")
+            getContacts() |> List.iter (fun c -> printfn "%s %s (%s)" c.Firstname c.Lastname c.Email)
         | "2" -> captureContacts saveContact
         | _ -> printMenu()
 
