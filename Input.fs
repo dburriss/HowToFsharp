@@ -4,7 +4,7 @@ module Input =
 
     open System
     
-    let captureInput(label:string) = 
+    let private captureInput(label:string) = 
             printf "%s" label
             Console.ReadLine()
 
@@ -12,7 +12,7 @@ module Input =
         printfn "ERRORS"
         errs |> Seq.iter (printfn "%s")
 
-    let rec captureContact() =
+    let rec private captureContact() =
         printfn "CAPTURE CONTACT"
         Contact.create
             (captureInput "First name: ")
@@ -24,7 +24,7 @@ module Input =
                         printErrors err
                         captureContact()
 
-    let captureContactChoice saveContact =
+    let private captureContactChoice saveContact =
         let contact = captureContact()
         saveContact contact
         let another = captureInput "Continue (Y/N)?"
@@ -32,7 +32,7 @@ module Input =
         | "Y" -> Choice1Of2 ()
         | _ -> Choice2Of2 ()
 
-    let rec captureContacts saveContact =
+    let rec private captureContacts saveContact =
         match captureContactChoice saveContact with
         | Choice1Of2 _ -> 
             captureContacts saveContact
