@@ -10,7 +10,7 @@ let getContacts() =
                         List.empty
 
 let insertContact c =
-    Data.insert c 
+    Data.insert c
     |> fun r -> match r with
                 | Ok i -> printfn "%i records inserted" i
                 | Error e -> printfn "ERROR: %s" e.Message

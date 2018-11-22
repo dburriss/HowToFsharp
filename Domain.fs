@@ -26,3 +26,7 @@ module Contact =
         }
 
         if(Seq.isEmpty errors) then Ok contact else Error errors
+
+    let create fname lname email =
+        let c = { Id = Guid.NewGuid(); Firstname = fname; Lastname = lname; Email = email }
+        validate c

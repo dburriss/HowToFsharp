@@ -8,13 +8,21 @@ module Input =
             printf "%s" label
             Console.ReadLine()
 
-    let captureContact() =
-        {
-            Id = Guid.NewGuid()
-            Firstname = captureInput "First name: "
-            Lastname = captureInput "Last name: "
-            Email = captureInput "Email: "
-        }
+    let private printErrors errs =
+        printfn "ERRORS"
+        errs |> Seq.iter (printfn "%s")
+
+    let rec captureContact() =
+        printfn "CAPTURE CONTACT"
+        Contact.create
+            (captureInput "First name: ")
+            (captureInput "Last name: ")
+            (captureInput "Email: ")
+        |> fun r -> match r with
+                    | Ok c -> c
+                    | Error err -> 
+                        printErrors err
+                        captureContact()
 
     let captureContactChoice saveContact =
         let contact = captureContact()
@@ -37,8 +45,6 @@ module Input =
         printfn "1. Print Contacts"
         printfn "2. Capture Contacts"
         printfn "0. Quit"
-
-    let saveContact contact = printfn "%A" contact
 
     let routeMenuOption i getContacts saveContact =
         match i with
