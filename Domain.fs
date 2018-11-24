@@ -9,6 +9,7 @@ type Contact = {
     Email:string
 }
 
+[<RequireQualifiedAccess>]
 module Contact =
     let private isValidEmail (email:string) =
         try

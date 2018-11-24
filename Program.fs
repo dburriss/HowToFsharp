@@ -1,5 +1,4 @@
 ﻿open Contacts
-open Contacts.Input
 
 let getContacts() =
     Data.all()
@@ -17,10 +16,10 @@ let insertContact c =
 
 [<EntryPoint>]
 let main argv =
-    printMenu()
-    let mutable selection = readKey()
+    Input.printMenu()
+    let mutable selection = Input.readKey()
     while(selection <> "0") do
-        routeMenuOption selection getContacts insertContact 
-        printMenu()
-        selection <- readKey()
+        Input.routeMenuOption selection getContacts insertContact 
+        Input.printMenu()
+        selection <- Input.readKey()
     0

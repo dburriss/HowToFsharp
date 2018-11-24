@@ -4,6 +4,7 @@ open Contacts
 open System
 open System.Data.SQLite
 
+[<RequireQualifiedAccess>]
 module Data =
 
     type ContactEntity = { id:string; firstname:string; lastname:string; email:string }

@@ -1,5 +1,6 @@
 namespace Contacts
 
+[<RequireQualifiedAccess>]
 module Input = 
 
     open System
